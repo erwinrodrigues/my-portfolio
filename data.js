@@ -11,8 +11,8 @@ window.portfolioData = {
     "greeting": "Hi, I'm Erwin Anthony Rodrigues",
     "line": "I have a desire to learn and I am always open to new things.",
     "motto": "Master the craft. Earn the Trust. Outwork the Rest.",
-    "photo": "assets/portrait.svg",
-    "photoAlt": "Placeholder for a portrait of Erwin Anthony Rodrigues"
+    "photo": "assets/portrait.jpg",
+    "photoAlt": "Portrait of Erwin Anthony Rodrigues"
   },
   "about": {
     "paragraphs": [
@@ -20,7 +20,7 @@ window.portfolioData = {
       "I completed my schooling at St. Francis School (CISCE), Borivali.",
       "I am a charming individual with public speaking capabilities and a desire to learn."
     ],
-    "currentlyWorkingOn": "",
+    "currentlyWorkingOn": "Finlatics AI Native Web Developer\nCS50X",
     "style": {
       "fontFamily": "Segoe UI",
       "fontSize": "1rem",
