@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio utility tests</title>
+  <style>
+    body { font-family: Segoe UI, sans-serif; margin: 2rem; color: #241F1C; background: #F7F2EB; }
+    .pass { color: #1f6b3a; }
+    .fail { color: #8b2e2e; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Portfolio utility tests</h1>
+  <p id="summary"></p>
+  <pre id="log"></pre>
+  <script src="../js/safe-url.js"></script>
+  <script>
+    (function () {
+      const log = [];
+      let passed = 0;
+      let failed = 0;
+
+      function assert(name, cond) {
+        if (cond) {
+          passed += 1;
+          log.push("PASS  " + name);
+        } else {
+          failed += 1;
+          log.push("FAIL  " + name);
+        }
+      }
+
+      const s = window.portfolioSafe;
+      assert("safeUrl keeps assets path", s.safeUrl("assets/a.jpg") === "assets/a.jpg");
+      assert("safeUrl blocks javascript", s.safeUrl("javascript:alert(1)") === "");
+      assert("safeUrl blocks traversal", s.safeUrl("../../../etc/passwd") === "");
+      assert("safeUrl allows https links", s.safeUrl("https://example.com/x") === "https://example.com/x");
+      assert("safeMediaUrl blocks external https", s.safeMediaUrl("https://evil.example/x.png") === "");
+      assert("safeMediaUrl allows assets", s.safeMediaUrl("assets/x.png") === "assets/x.png");
+      assert("safeMediaUrl allows data image", s.safeMediaUrl("data:image/png;base64,aaa") === "data:image/png;base64,aaa");
+      assert("safeUrl allows data image", s.safeUrl("data:image/png;base64,aaa") === "data:image/png;base64,aaa");
+      assert("ageFromBirthDate rejects bad date", s.ageFromBirthDate("nope") === null);
+      assert("ageFromBirthDate accepts ISO", typeof s.ageFromBirthDate("2008-12-21") === "number");
+      assert("visibleSlice caps when collapsed", s.visibleSlice([1,2,3,4,5,6,7], 6, false).length === 6);
+      assert("visibleSlice expands", s.visibleSlice([1,2,3,4,5,6,7], 6, true).length === 7);
+      assert("safeUrl blocks absolute non-asset path", s.safeUrl("/etc/passwd") === "");
+      assert("safeUrl allows /assets path", s.safeUrl("/assets/certificates/a.pdf") === "/assets/certificates/a.pdf");
+      assert("safeMediaUrl blocks javascript", s.safeMediaUrl("javascript:alert(5)") === "");
+      assert("safeUrl blocks data text", s.safeUrl("data:text/html;base64,aaa") === "");
+      assert("visibleSlice 40 certs collapsed", s.visibleSlice(new Array(40).fill(1), 6, false).length === 6);
+      assert("visibleSlice 25 projects collapsed", s.visibleSlice(new Array(25).fill(1), 4, false).length === 4);
+
+      document.getElementById("summary").innerHTML =
+        failed === 0
+          ? '<span class="pass">' + passed + " passed, 0 failed</span>"
+          : '<span class="fail">' + passed + " passed, " + failed + " failed</span>";
+      document.getElementById("log").textContent = log.join("\n");
+    })();
+  </script>
+</body>
+</html>

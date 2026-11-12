@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erwin Anthony Rodrigues — Portfolio</title>
+  <meta name="description" content="Portfolio of Erwin Anthony Rodrigues, a first-year computer engineering student at Fr. Conceicao Rodrigues College of Engineering, Bandra.">
+  <meta name="author" content="Erwin Anthony Rodrigues">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#F7F2EB">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://ghchart.rshah.org https://github.com; style-src 'self'; script-src 'self'; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta property="og:title" content="Erwin Anthony Rodrigues — Portfolio">
+  <meta property="og:description" content="Portfolio of Erwin Anthony Rodrigues, a first-year computer engineering student at Fr. Conceicao Rodrigues College of Engineering, Bandra.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/portrait.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Erwin Anthony Rodrigues — Portfolio">
+  <meta name="twitter:description" content="Portfolio of Erwin Anthony Rodrigues, a first-year computer engineering student at Fr. Conceicao Rodrigues College of Engineering, Bandra.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": "Erwin Anthony Rodrigues — Portfolio",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Erwin Anthony Rodrigues",
+      "affiliation": {
+        "@type": "EducationalOrganization",
+        "name": "Fr. Conceicao Rodrigues College of Engineering, Bandra"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "St. Francis School (CISCE), Borivali"
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="bg-[#F7F2EB] font-[Segoe_UI,system-ui,sans-serif] text-[#241F1C] antialiased">
+  <a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-[#F7F2EB] focus:px-3 focus:py-2">Skip to content</a>
+
+  <header class="sticky top-0 z-20 border-b border-[#D9CBBA] bg-[#EFE4D6]">
+    <nav aria-label="Portfolio" class="font-bahnschrift mx-auto flex w-full max-w-6xl flex-wrap items-center justify-evenly gap-x-3 gap-y-1 px-3 py-1 text-[clamp(0.8rem,1.05vw,1rem)] sm:px-6">
+      <a href="#hero" class="inline-flex min-h-11 items-center px-1.5">Home</a>
+      <a href="#about" class="inline-flex min-h-11 items-center px-1.5">About Me</a>
+      <a href="#certificates" class="inline-flex min-h-11 items-center px-1.5">Certificates</a>
+      <a href="#github" class="inline-flex min-h-11 items-center px-1.5">GitHub</a>
+      <a href="#projects" class="inline-flex min-h-11 items-center px-1.5">Projects</a>
+      <a href="#contact" class="inline-flex min-h-11 items-center px-1.5">Contact</a>
+      <a href="login.html" class="inline-flex min-h-11 items-center px-1.5">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="scroll-mt-24">
+      <div id="hero-grid" class="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-[clamp(2.5rem,6vw,6rem)] sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div class="max-w-xl">
+          <h1 id="hero-greeting" class="text-[clamp(2rem,4.2vw,3.5rem)] font-bold leading-tight text-balance"></h1>
+          <p id="hero-line" class="mt-5 text-lg leading-relaxed"></p>
+          <p id="hero-motto" class="mt-6 text-lg font-semibold leading-relaxed sm:tracking-wide"></p>
+        </div>
+        <div id="hero-photo-wrap" class="lg:justify-self-end">
+          <img id="hero-photo" src="assets/portrait.svg" alt="Placeholder for a portrait of Erwin Anthony Rodrigues" width="800" height="1000" fetchpriority="high" decoding="async" class="mx-auto h-auto w-full max-w-sm bg-[#F7F2EB] object-contain lg:mx-0">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="scroll-mt-24" aria-labelledby="about-heading">
+      <div class="mx-auto w-full max-w-2xl px-4 py-[clamp(2.5rem,6vw,5.5rem)] text-center sm:px-6">
+        <h2 id="about-heading" class="text-[clamp(1.6rem,2.4vw,2.1rem)] font-semibold tracking-tight">About Me</h2>
+        <div id="about-copy" class="mt-6 space-y-4 text-base leading-relaxed"></div>
+        <div id="currently-working-wrap" class="mt-10 border-t border-[#E4D5C4] pt-8">
+          <h3 class="text-lg font-semibold">Currently working on</h3>
+          <p id="currently-working-on" class="mt-3 whitespace-pre-line text-base leading-relaxed"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="scroll-mt-24" aria-labelledby="certificates-heading">
+      <div class="mx-auto w-full max-w-6xl px-4 py-[clamp(2.5rem,6vw,5.5rem)] sm:px-6 lg:px-8">
+        <h2 id="certificates-heading" class="text-center text-[clamp(1.6rem,2.4vw,2.1rem)] font-semibold tracking-tight">Certificates</h2>
+        <p id="certificates-empty" class="mt-8 text-center text-[#5C5148]" hidden></p>
+        <div id="certificate-list" class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-10" hidden></div>
+        <div class="mt-8 text-center">
+          <button type="button" id="certificates-more" class="inline-flex min-h-11 items-center px-3 text-base font-medium text-[#6E4630] underline decoration-1 underline-offset-4 hover:text-[#241F1C]" hidden aria-expanded="false" aria-controls="certificate-list" aria-label="Show more certificates">+more</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="github" class="scroll-mt-24" aria-labelledby="github-heading">
+      <div class="mx-auto w-full max-w-6xl px-4 py-[clamp(2.5rem,6vw,5.5rem)] text-center sm:px-6 lg:px-8">
+        <h2 id="github-heading" class="text-[clamp(1.6rem,2.4vw,2.1rem)] font-semibold tracking-tight">GitHub</h2>
+        <div id="github-slot" class="mt-8"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="scroll-mt-24" aria-labelledby="projects-heading">
+      <div class="mx-auto w-full max-w-6xl px-4 py-[clamp(2.5rem,6vw,5.5rem)] sm:px-6 lg:px-8">
+        <h2 id="projects-heading" class="text-center text-[clamp(1.6rem,2.4vw,2.1rem)] font-semibold tracking-tight">Projects</h2>
+        <p id="projects-empty" class="mt-8 text-center text-[#5C5148]"></p>
+        <div id="project-list" class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-10" hidden></div>
+        <div class="mt-8 text-center">
+          <button type="button" id="projects-more" class="inline-flex min-h-11 items-center px-3 text-base font-medium text-[#6E4630] underline decoration-1 underline-offset-4 hover:text-[#241F1C]" hidden aria-expanded="false" aria-controls="project-list" aria-label="Show more projects">+more</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-mt-24 bg-[#E4D5C4]" aria-labelledby="contact-heading">
+      <div class="mx-auto w-full max-w-2xl px-4 py-[clamp(2.75rem,6vw,5.5rem)] text-center sm:px-6">
+        <h2 id="contact-heading" class="text-[clamp(1.6rem,2.4vw,2.1rem)] font-bold tracking-tight">Contact Me</h2>
+        <p id="contact-mobile-row" class="mt-6 text-base">Mobile no.: <span id="contact-mobile"></span></p>
+        <p id="contact-message-label" class="mt-5 text-base font-medium">Message me</p>
+        <p id="contact-instagram-row" class="mt-4 flex min-h-11 items-center justify-center gap-2">
+          <img src="assets/instagram.svg" width="20" height="20" alt="">
+          <span id="contact-instagram"></span>
+        </p>
+        <p id="contact-linkedin-row" class="mt-2 flex min-h-11 items-center justify-center gap-2">
+          <img src="assets/linkedin.svg" width="20" height="20" alt="">
+          <span id="contact-linkedin"></span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="js/safe-url.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

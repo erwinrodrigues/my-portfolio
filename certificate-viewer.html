@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate — Erwin Anthony Rodrigues</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; object-src 'self'; frame-src 'self'; frame-ancestors 'none'; base-uri 'self'">
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="min-h-screen bg-[#F7F2EB] font-[Segoe_UI,system-ui,sans-serif] text-[#241F1C] antialiased">
+  <header class="border-b border-[#D9CBBA] bg-[#EFE4D6]">
+    <nav aria-label="Certificate viewer" class="mx-auto flex w-full max-w-6xl items-center px-4 py-3 sm:px-6">
+      <a href="index.html#certificates" class="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4">Back to portfolio</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto w-full max-w-4xl px-4 py-6 sm:px-6">
+    <h1 id="viewer-title" class="text-center text-lg font-semibold tracking-tight">Certificate</h1>
+    <p id="viewer-error" class="mt-4 text-center text-[#8B2E2E]" hidden></p>
+    <img id="viewer-image" alt="" class="mx-auto mt-6 h-auto max-h-[80vh] w-auto max-w-full object-contain" hidden>
+    <object id="viewer-pdf" class="mt-6 h-[80vh] w-full bg-[#F7F2EB]" type="application/pdf" hidden></object>
+  </main>
+
+  <script src="js/safe-url.js"></script>
+  <script src="js/certificate-viewer-page.js"></script>
+</body>
+</html>

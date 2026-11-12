@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait to be added</title>
+  <desc id="desc">Placeholder for a portrait of Erwin Anthony Rodrigues</desc>
+  <rect width="800" height="1000" fill="#E4D5C4"/>
+  <rect x="48" y="48" width="704" height="904" fill="none" stroke="#6E4630" stroke-width="3"/>
+  <text x="400" y="486" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="40" fill="#241F1C">Portrait to be added</text>
+</svg>
