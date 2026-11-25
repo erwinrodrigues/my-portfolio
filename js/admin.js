@@ -136,7 +136,7 @@
         } else {
           setStatus(
             "Live preview updated on this device. Durable save skipped: " +
-              (durable.error || "start node serve.js and sign in again.")
+              (durable.error || "start node tools/serve.js and sign in again.")
           );
         }
       } catch (err) {

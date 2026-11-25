@@ -2,7 +2,7 @@
    - Public static files for the portfolio
    - Durable publish: POST /api/publish  Authorization: Bearer <sha256-password-hash>
    - Login is client-side (js/auth.js); this file does not gate admin pages
-   Usage: node serve.js
+   Usage: node tools/serve.js
 */
 
 const http = require("http");
@@ -10,7 +10,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const ROOT = __dirname;
+const ROOT = path.join(__dirname, "..");
 const PORT = 8765;
 const PASSWORD_HASH =
   "8e23f5f04bb1d932f44a674bda7c187ea97cf0d6d37f709980ec423d91aa402f";
@@ -91,6 +91,7 @@ function readBody(req, limit) {
 function isDeniedStaticPath(normalized) {
   const lower = normalized.toLowerCase();
   if (lower === "/serve.js") return true;
+  if (lower === "/tools" || lower.startsWith("/tools/")) return true;
   if (lower === "/.portfolio-auth.json") return true;
   if (lower.startsWith("/reports/")) return true;
   if (lower.endsWith(".mjs")) return true;
