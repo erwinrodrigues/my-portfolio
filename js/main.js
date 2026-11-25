@@ -1,7 +1,5 @@
 (function () {
-  const LIVE_KEY = "portfolioLiveData";
-  const LIVE_CHANNEL = "portfolio-live-updates";
-  let data = loadPortfolioData();
+  let data = window.portfolioData || null;
   if (!data) return;
 
   const CERTIFICATE_LIMIT = 6;
@@ -28,56 +26,8 @@
   }
 
   refreshAll();
-  watchLiveUpdates();
-
-  function loadPortfolioData() {
-    const fileData = window.portfolioData || null;
-    try {
-      const raw = localStorage.getItem(LIVE_KEY);
-      if (raw) {
-        if (raw.length > 1500 * 1024) {
-          localStorage.removeItem(LIVE_KEY);
-          return fileData;
-        }
-        const live = JSON.parse(raw);
-        if (isUsablePortfolio(live)) {
-          if (Array.isArray(live.certificates)) {
-            live.certificates = dedupeByTitle(
-              repairCertificatePaths(live.certificates)
-            );
-            try {
-              localStorage.setItem(LIVE_KEY, JSON.stringify(live));
-            } catch (ignore) {
-              /* ignore quota errors */
-            }
-          }
-          return live;
-        }
-        localStorage.removeItem(LIVE_KEY);
-      }
-    } catch (err) {
-      try {
-        localStorage.removeItem(LIVE_KEY);
-      } catch (ignore) {
-        /* ignore */
-      }
-    }
-    return fileData;
-  }
-
-  function isUsablePortfolio(live) {
-    if (!live || typeof live !== "object") return false;
-    const greeting = live.hero && String(live.hero.greeting || "").trim();
-    if (greeting) return true;
-    const paragraphs = live.about && Array.isArray(live.about.paragraphs) ? live.about.paragraphs : [];
-    if (paragraphs.some(function (p) { return String(p || "").trim(); })) return true;
-    if (live.certificates && live.certificates.length) return true;
-    if (live.projects && live.projects.length) return true;
-    return false;
-  }
 
   function refreshAll() {
-    data = loadPortfolioData();
     if (!data) return;
     renderHero();
     renderAbout();
@@ -85,20 +35,6 @@
     renderGithub();
     renderProjects();
     renderContact();
-  }
-
-  function watchLiveUpdates() {
-    window.addEventListener("storage", function (event) {
-      if (event.key === LIVE_KEY) refreshAll();
-    });
-    try {
-      const channel = new BroadcastChannel(LIVE_CHANNEL);
-      channel.addEventListener("message", function (event) {
-        if (event.data && event.data.type === "portfolio-updated") refreshAll();
-      });
-    } catch (err) {
-      /* BroadcastChannel may be unavailable */
-    }
   }
 
   function renderHero() {
